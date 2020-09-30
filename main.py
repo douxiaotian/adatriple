@@ -247,7 +247,8 @@ for epoch in range(opt.n_epochs):
     if opt.scheduler!='none': print('Running with learning rates {}...'.format(' | '.join('{}'.format(x) for x in scheduler.get_lr())))
 
 
-    """======================================="""daif opt.use_learned_sampler and opt.policy_scramble_dataloaders and epoch%opt.policy_scramble_freq==0 and epoch!=0:
+    """======================================="""
+    if opt.use_learned_sampler and opt.policy_scramble_dataloaders and epoch%opt.policy_scramble_freq==0 and epoch!=0:
         print('Scrambled!')
         rl.scramble_train_val(sampledata, dataloaders['validation'], PADS, opt.train_val_split, opt.train_val_split_by_class)
 
