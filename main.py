@@ -238,7 +238,7 @@ iter_count = 0
 for epoch in range(opt.n_epochs):
     m = m0*2
     if m > opt.n_epochs:
-        print 'Sample Size increases to the most'
+        print ('Sample Size increases to the most')
         break
     train_sampler = SubsetRandomSampler(m)
     sampledata = Dataloader(dataloaders['training'], sampler = train_sampler)
