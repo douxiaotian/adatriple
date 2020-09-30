@@ -78,7 +78,7 @@ parser.add_argument('--gpu',          default=0,           type=int,   help='Ran
 parser.add_argument('--no_weights',                        action='store_true')
 parser.add_argument('--savename',     default='group_plus_seed',   type=str,   help='Appendix to save folder name if any special information is to be included.')
 ### Paths to datasets and storage folder
-parser.add_argument('--source_path',  default=os.getcwd()+'/../../Datasets', type=str, help='Path to training data.')
+parser.add_argument('--source_path',  default=os.getcwd(), type=str, help='Path to training data.')
 parser.add_argument('--save_path',    default=os.getcwd()+'/Training_Results', type=str, help='Where to save everything.')
 
 ### Wandb Log Arguments
