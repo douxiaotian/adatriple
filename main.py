@@ -165,6 +165,8 @@ to_optim   = [{'params':model.parameters(),'lr':opt.lr,'weight_decay':opt.decay}
 
 dataloaders      = data.give_dataloaders(opt.dataset, opt)
 opt.num_classes  = len(dataloaders['training'].dataset.avail_classes)
+print("num of classes", opt.num_classes)
+print("num of training samples", len(dataloaders['training']))
 
 
 """============================================================================"""
