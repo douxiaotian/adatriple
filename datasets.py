@@ -63,7 +63,11 @@ def give_CUB200_datasets(opt):
     image_list        = {int(key.split('.')[0]):sorted([image_sourcepath+'/'+key+'/'+x for x in os.listdir(image_sourcepath+'/'+key) if '._' not in x]) for key in image_classes}
     image_list        = [[(key,img_path) for img_path in image_list[key]] for key in image_list.keys()]
     image_list        = [x for y in image_list for x in y]
+<<<<<<< HEAD
 
+=======
+    print('conversion', conversion)
+>>>>>>> add print
     image_dict    = {}
     for key, img_path in image_list:
         key = key-1
@@ -105,6 +109,10 @@ def give_CUB200_datasets(opt):
     eval_dataset.conversion  = conversion
 
     if opt.sampling!='learned':
+<<<<<<< HEAD
+=======
+        print('train dataset', train_dataset)
+>>>>>>> add print
         return {'training':train_dataset, 'testing':test_dataset, 'evaluation':eval_dataset}
     else:
         val_dataset   = BaseTripletDataset(val_image_dict,   opt, is_validation=True)
@@ -169,6 +177,10 @@ def give_CARS196_datasets(opt):
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> add print
 def give_OnlineProducts_datasets(opt):
     image_sourcepath  = opt.source_path+'/images'
     training_files = pd.read_table(opt.source_path+'/Info_Files/Ebay_train.txt', header=0, delimiter=' ')
